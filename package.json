@@ -1,0 +1,20 @@
+{
+  "name": "dataverbis",
+  "version": "1.0.0",
+  "description": "Data Verbis",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node index.js 3000"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "await-exec": "^0.1.2",
+    "bootstrap": "^4.3.1",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0"
+  }
+}

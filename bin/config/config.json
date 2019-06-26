@@ -1,0 +1,9 @@
+{
+"connection":{
+"host":"localhost",
+"password":"rafacien",
+"user":"root",
+"database":"mas"
+},
+"database": "mas"
+}
