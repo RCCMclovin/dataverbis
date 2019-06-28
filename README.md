@@ -14,7 +14,8 @@ Carregue também o arquivo setup_mas.sql, disponível na raiz desse projeto, no 
 Faça download também dos jars em:
 https://drive.google.com/file/d/1ggwTbEQsYHb0idMpr0qWvKjk7ulSJQTy/view
 
-Guarde os jars dentro da pasta bin.
+Extraia os jars dentro do diretório bin.
+obs.: Dentro do diretório bin deve haver o diretório jars.
 
 Execute o programa config.py para fazer as configurações iniciais.
 
