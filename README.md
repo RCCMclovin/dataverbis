@@ -15,12 +15,15 @@ Faça download também dos jars em:
 https://drive.google.com/file/d/1ggwTbEQsYHb0idMpr0qWvKjk7ulSJQTy/view
 
 Extraia os jars dentro do diretório bin.
+
 obs.: Dentro do diretório bin deve haver o diretório jars.
 
 Execute o programa config.py para fazer as configurações iniciais.
 
 obs.: config.py ira requisitar informações para acessar o banco de dados que acabamos de baixar.
+
 O config.py deverá ser executado em python 2.
+
 Digite as informações entre aspas simples ou duplas senão ocorrerá um erro.
 
 
