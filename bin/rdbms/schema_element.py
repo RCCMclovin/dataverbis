@@ -15,19 +15,16 @@ class SchemaElement:
     
     def is_schema_exist(self, tag, dicts):
         mapped_schema_element = None
-        f = False
         if self == self.relation.default_attribute:
             if str(self.relation.name) in dicts and\
-               str(self.name) in dicts[str(self.relation.name)]:
+               str(self.name) in dicts[str(self.relation.name)] and\
+               (if_list_similar(tag, dicts['relation'][str(self.relation.name)]) or\
+               if_list_similar(tag, dicts[str(self.relation.name)][str(self.name)])):
                
-                if if_list_similar(tag, dicts['relation'][str(self.relation.name)]) or\
-                    if_list_similar(tag, dicts[str(self.relation.name)][str(self.name)]):
-                   mapped_schema_element = MappedSchemaElement(self)
-                   mapped_schema_element.similarity = similarity_list(tag, dicts['relation'][str(self.relation.name)])
-                   mapped_schema_element.similarity = 1 - (1 - mapped_schema_element.similarity) * (1 -
-                   similarity_list(tag, dicts[str(self.relation.name)][str(self.name)]))
-                else:
-                    f = True
+                mapped_schema_element = MappedSchemaElement(self)
+                mapped_schema_element.similarity = similarity_list(tag, dicts['relation'][str(self.relation.name)])
+                mapped_schema_element.similarity = 1 - (1 - mapped_schema_element.similarity) * (1 -
+                    similarity_list(tag, dicts[str(self.relation.name)][str(self.name)]))
     
             elif if_schema_similar(self.relation.name, tag) or if_schema_similar(self.name, tag):
                 mapped_schema_element = MappedSchemaElement(self)
@@ -35,15 +32,12 @@ class SchemaElement:
                 mapped_schema_element.similarity = 1 - (1 - mapped_schema_element.similarity) * (1 -
                     similarity_words(self.name,tag))
                 
-        elif str(self.relation.name) in dicts and str(self.name) in dicts[str(self.relation.name)]:
+        elif str(self.relation.name) in dicts and str(self.name) in dicts[str(self.relation.name)] and\
+             if_list_similar(tag, dicts[str(self.relation.name)][str(self.name)]):
+            mapped_schema_element = MappedSchemaElement(self)
+            mapped_schema_element.similarity = similarity_list(tag, dicts[str(self.relation.name)][str(self.name)])
 
-            if if_list_similar(tag, dicts[str(self.relation.name)][str(self.name)]):
-                mapped_schema_element = MappedSchemaElement(self)
-                mapped_schema_element.similarity = similarity_list(tag, dicts[str(self.relation.name)][str(self.name)])
-            else:
-                f = True
-
-        elif if_schema_similar(self.name, tag) or f:
+        elif if_schema_similar(self.name, tag):
             mapped_schema_element = MappedSchemaElement(self)
             mapped_schema_element.similarity = similarity_words(self.name, tag) 
 
@@ -52,7 +46,7 @@ class SchemaElement:
 
 
     def is_text_exist(self, value, connection):
-        sql = 'select * from size WHERE size.relation = \'{0}\''.format(self.relation.name)
+        sql = u'select * from size WHERE size.relation = \'{0}\''.format(self.relation.name).encode('utf-8').strip()
         #print sql
         cursor = connection.cursor()
         cursor.execute(sql)
@@ -61,17 +55,20 @@ class SchemaElement:
         
         sql = ''
         if size < 2000:
-            sql = 'select {0} from {1}'.format(self.name, self.relation.name)
+            sql = u'select {0} from {1}'.format(self.name, self.relation.name).encode('utf-8').strip()
 
         elif size >= 2000 and size < 100000:
-            sql = 'select {0} from {1} where {2} like \'%{3}%\' LIMIT 0,2000'.format(self.name, self.relation.name, self.name ,value)
+            sql = u'select {0} from {1} where {2} like \'%{3}%\' LIMIT 0,2000'.format(self.name, self.relation.name, self.name ,value).encode('utf-8').strip()
         
         else:
-            sql = 'select {0} from {1} where match({2}) against(\'{3}\') LIMIT 0,2000'.format(self.name, self.relation.name, self.name ,value)
+            sql = u'select {0} from {1} where match({2}) against(\'{3}\') LIMIT 0,2000'.format(self.name, self.relation.name, self.name ,value).encode('utf-8').strip()
         #print sql
         mapped_schema_element = MappedSchemaElement(self)
         cursor = connection.cursor()
-        cursor.execute(sql)
+        try:
+            cursor.execute(sql)
+        except:
+            sql = u'select {0} from {1} where {2} like \'%{3}%\' LIMIT 0,2000'.format(self.name, self.relation.name, self.name ,value).encode('utf-8').strip()
         for (line) in cursor:
             mapped_schema_element.mapped_values += [line[0]]
 
@@ -84,7 +81,7 @@ class SchemaElement:
 
     def is_num_exist(self,number, operator, connection):
         cursor = connection.cursor()
-        sql = 'select {0} from {1} where {2} {3} {4} LIMIT 0, 10'.format(self.name, self.relation.name, self.name, operator, number)
+        sql = u'select {0} from {1} where {2} {3} {4} LIMIT 0, 10'.format(self.name, self.relation.name, self.name, operator, number).encode('utf-8').strip()
         #print sql
         cursor.execute(sql)
         mapped_schema_element = MappedSchemaElement(self)

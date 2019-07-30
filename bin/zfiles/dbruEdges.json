@@ -1,0 +1,151 @@
+[
+  {
+    "foreignAttribute": "menu_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "aplicacao",
+    "primaryRelation": "menu"
+  },
+  {
+    "foreignAttribute": "usuario_created_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "aplicacao",
+    "primaryRelation": "usuario"
+  },
+  {
+    "foreignAttribute": "usuario_updated_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "aplicacao",
+    "primaryRelation": "usuario"
+  },
+  {
+    "foreignAttribute": "aluno_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "curso_aluno",
+    "primaryRelation": "aluno"
+  },
+  {
+    "foreignAttribute": "usuario_created_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "grupo",
+    "primaryRelation": "usuario"
+  },
+  {
+    "foreignAttribute": "usuario_updated_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "grupo",
+    "primaryRelation": "usuario"
+  },
+  {
+    "foreignAttribute": "aplicacao_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "grupo_aplicacao",
+    "primaryRelation": "aplicacao"
+  },
+  {
+    "foreignAttribute": "grupo_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "grupo_aplicacao",
+    "primaryRelation": "grupo"
+  },
+  {
+    "foreignAttribute": "usuario_created_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "menu",
+    "primaryRelation": "usuario"
+  },
+  {
+    "foreignAttribute": "usuario_updated_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "menu",
+    "primaryRelation": "usuario"
+  },
+  {
+    "foreignAttribute": "usuario_created_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "movimentacao",
+    "primaryRelation": "usuario"
+  },
+  {
+    "foreignAttribute": "usuario_updated_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "movimentacao",
+    "primaryRelation": "usuario"
+  },
+  {
+    "foreignAttribute": "aluno_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "movimentacao",
+    "primaryRelation": "aluno"
+  },
+  {
+    "foreignAttribute": "restaurante_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "movimentacao",
+    "primaryRelation": "restaurante"
+  },
+  {
+    "foreignAttribute": "tipo_alimentacao_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "movimentacao",
+    "primaryRelation": "tipo_alimentacao"
+  },
+  {
+    "foreignAttribute": "setor_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "movimentacao",
+    "primaryRelation": "setor"
+  },{
+    "foreignAttribute": "usuario_created_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "restaurante",
+    "primaryRelation": "usuario"
+  },
+  {
+    "foreignAttribute": "usuario_updated_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "restaurante",
+    "primaryRelation": "usuario"
+  },
+  {
+    "foreignAttribute": "restaurante_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "setor",
+    "primaryRelation": "restaurante"
+  },
+  {
+    "foreignAttribute": "usuario_created_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "tipo_alimentacao",
+    "primaryRelation": "usuario"
+  },
+  {
+    "foreignAttribute": "usuario_updated_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "tipo_alimentacao",
+    "primaryRelation": "usuario"
+  },
+  {
+    "foreignAttribute": "restaurante_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "tipo_alimentacao",
+    "primaryRelation": "restaurante"
+  },
+  {
+    "foreignAttribute": "grupo_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "usuario",
+    "primaryRelation": "grupo"
+  },
+  {
+    "foreignAttribute": "usuario_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "usuario_aplicacao",
+    "primaryRelation": "usuario"
+  },
+  {
+    "foreignAttribute": "aplicacao_id",
+    "primaryAttribute": "id",
+    "foreignRelation": "usuario_aplicacao",
+    "primaryRelation": "aplicacao"
+  }
+]

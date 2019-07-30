@@ -49,7 +49,7 @@ class SchemaGraph:
                 #print 'att: ', relation.element_id, attribute.element_id  
                 self.weights[relation.element_id][attribute.element_id] = self.ATT_EDGE
 
-
+        
         self.path_edges_file = self.default_path.format(name, "Edges")
         with open(self.path_edges_file, 'r') as file:
             self.raw_edge_relation = json.load(file)
@@ -82,6 +82,7 @@ class SchemaGraph:
 
 
     def shortest_distance_compute(self):
+        
         self.shortest_distance = np.zeros(self.weights.shape)
         self.pre_elements = np.zeros(self.weights.shape, dtype=np.int32)
         
@@ -96,13 +97,12 @@ class SchemaGraph:
             for j in range(self.weights.shape[1]):
                 self.shortest_distance[i][j] = self.weights[i][j]
 
-
         for i in range(self.weights.shape[0]):
             #print(self.weights[i])
             self.dijkstra(i)
-        
 
     def dijkstra(self, source):
+        
         local_distance = np.zeros((len(self.schema_elements)))
         for i in range(local_distance.shape[0]):
             local_distance[i] = self.weights[source][i] 
@@ -115,7 +115,7 @@ class SchemaGraph:
         
         finished = False
         while not finished:
-            max_distance = 0
+            max_distance = -1
             max_order = -1
             for i in range(self.weights.shape[0]):
                 if not dealt[i] and local_distance[i] > max_distance:
@@ -134,7 +134,7 @@ class SchemaGraph:
                 if not dealt_item:
                     finished = False
                     break
-
+                    
         for i in range(len(local_distance)):
             self.shortest_distance[source][i] = local_distance[i]        
 
@@ -231,14 +231,11 @@ class SchemaGraph:
         #                     #print(j)
         #                     result = j
         #                     break
-        #                 j+=1
-
-                    
+        #                 j+=1        
         #             if result >= 0:
         #                 break
         #     i+=1
-
-        return result
+        #return result
 
     def print_for_check(self):
         entities = self.schema_elements

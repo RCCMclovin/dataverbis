@@ -1,0 +1,606 @@
+[
+  {
+    "name": "aluno",
+    "attributes": [
+      {
+        "name": "id",
+        "type": "pk"
+      },
+      {
+        "importance": "primary",
+        "name": "nome_pessoa",
+        "type": "text"
+      },
+      {
+        "name": "version",
+        "type": "number"
+      },
+      {
+        "name": "rg",
+        "type": "text"
+      },
+      {
+        "name": "last_updated",
+        "type": "date"
+      },
+      {
+        "name": "dt_nascimento",
+        "type": "date"
+      },
+      {
+        "name": "foto",
+        "type": "binary"
+      },
+      {
+        "name": "digital_dir",
+        "type": "binary"
+      },
+      {
+        "name": "digital_esq",
+        "type": "binary"
+      },
+      {
+        "name": "date_created",
+        "type": "date"
+      },
+      {
+        "name": "cpf",
+        "type": "text"
+      }
+    ],
+    "type": "entity"
+  },
+
+  {
+    "name": "aplicacao",
+    "attributes": [
+      {
+        "name": "id",
+        "type": "pk"
+      },
+      {
+        "name": "version",
+        "type": "number"
+      },
+      {
+        "name": "date_created",
+        "type": "date"
+      },
+      {
+        "name": "last_updated",
+        "type": "date"
+      },
+      {
+        "importance": "primary",
+        "name": "controle",
+        "type": "text"
+      },
+      {
+        "name": "descricao",
+        "type": "text"
+      },
+      {
+        "name": "dt_fim",
+        "type": "date"
+      },
+      {
+        "name": "dt_inicio",
+        "type": "date"
+      },
+      {
+        "name": "ativo",
+        "type": "number"
+      },
+      {
+        "name": "usuario_created_id",
+        "type": "fk"
+      },
+    {
+        "name": "usuario_updated_id",
+        "type": "fk"
+      },
+      {
+        "name": "visivel",
+        "type": "number"
+      }
+    ],
+    "type": "entity"
+  },
+  {
+    "name": "curso_aluno",
+    "attributes": [
+      {
+        "name": "id",
+        "type": "pk"
+      },
+      {
+        "name": "date_created",
+        "type": "date"
+      },
+      {
+        "name": "last_updated",
+        "type": "date"
+      },
+      {
+        "name": "version",
+        "type": "number"
+      },
+      {
+        "name": "ano_ingresso",
+        "type": "number"
+      },
+      {
+        "name": "aluno_id",
+        "type": "fk"
+      },
+      {
+        "importance": "primary",
+        "name": "matr_aluno",
+        "type": "text"
+      },
+      {
+        "name": "nome_curso",
+        "type": "text"
+      },
+      {
+        "name": "cod_curso",
+        "type": "text"
+      },
+      {
+        "name": "forma_evasao",
+        "type": "text"
+      }
+    ],
+    "type": "entity"
+  },
+  {
+    "name": "grupo_aplicacao",
+    "attributes": [
+      {
+        "name": "id",
+        "type": "pk"
+      },
+      {
+        "name": "version",
+        "type": "number"
+      },
+      {
+        "name": "aplicacao_id",
+        "type": "fk"
+      },
+      {
+        "name": "date_created",
+        "type": "date"
+      },
+      {
+        "name": "last_updated",
+        "type": "date"
+      },
+      {
+        "name": "grupo_id",
+        "type": "fk"
+      }
+    ],
+    "type": "relationship"
+  },
+  {
+    "name": "usuario_aplicacao",
+    "attributes": [
+      {
+        "name": "id",
+        "type": "pk"
+      },
+      {
+        "name": "version",
+        "type": "number"
+      },
+      {
+        "name": "aplicacao_id",
+        "type": "fk"
+      },
+      {
+        "name": "date_created",
+        "type": "date"
+      },
+      {
+        "name": "last_updated",
+        "type": "date"
+      },
+      {
+        "name": "usuario_id",
+        "type": "fk"
+      }
+    ],
+    "type": "relationship"
+  },
+  {
+    "name": "grupo",
+    "attributes": [
+     {
+        "name": "id",
+        "type": "pk"
+      },
+      {
+        "name": "date_created",
+        "type": "date"
+      },
+      {
+        "name": "last_updated",
+        "type": "date"
+      },
+      {
+        "name": "version",
+        "type": "number"
+      },
+      {
+        "importance": "primary",
+        "name": "descricao",
+        "type": "text"
+      },
+      {
+        "name": "usuario_created_id",
+        "type": "fk"
+      },
+     {
+        "name": "usuario_updated_id",
+        "type": "fk"
+      }
+    ],
+    "type": "entity"
+  },
+  {
+    "name": "menu",
+    "attributes": [
+       {
+        "name": "id",
+        "type": "pk"
+      },
+      {
+        "name": "date_created",
+        "type": "date"
+      },
+      {
+        "name": "last_updated",
+        "type": "date"
+      },
+      {
+        "name": "version",
+        "type": "number"
+      },
+      {
+        "importance": "primary",
+        "name": "descricao",
+        "type": "text"
+      },
+      {
+        "name": "usuario_created_id",
+        "type": "fk"
+      },
+     {
+        "name": "usuario_updated_id",
+        "type": "fk"
+      }
+    ],
+    "type": "entity"
+  },
+  {
+    "name": "movimentacao",
+    "attributes": [
+       {
+        "name": "id",
+        "type": "pk"
+      },
+      {
+        "name": "date_created",
+        "type": "date"
+      },
+      {
+        "name": "last_updated",
+        "type": "date"
+      },
+      {
+        "name": "version",
+        "type": "number"
+      },
+      {
+        "importance": "primary",
+        "name": "num_venda",
+        "type": "number"
+      },
+      {
+        "name": "estorno",
+        "type": "number"
+      },
+      {
+        "name": "quantidade",
+        "type": "number"
+      },
+      {
+        "name": "restaurante_id",
+        "type": "fk"
+      },
+      {
+        "name": "saldo",
+        "type": "number"
+      },
+      {
+        "name": "sincronizado",
+        "type": "number"
+      },
+      {
+        "name": "valor_item",
+        "type": "number"
+      },
+      {
+        "name": "valor_fornecedor",
+        "type": "number"
+      },
+      {
+        "name": "tipo_alimentacao_id",
+        "type": "fk"
+      },
+      {
+        "name": "tipo_operacao",
+        "type": "text"
+      },
+      {
+        "name": "total_pago",
+        "type": "text"
+      },
+      {
+        "name": "troco",
+        "type": "text"
+      },
+      {
+        "name": "usuario_created_id",
+        "type": "fk"
+      },
+      {
+        "name": "setor_id",
+        "type": "fk"
+      },
+     {
+        "name": "usuario_updated_id",
+        "type": "fk"
+      }
+    ],
+    "type": "entity"
+  },
+  {
+    "name": "restaurante",
+    "attributes": [
+      {
+        "name": "id",
+        "type": "pk"
+      },
+      {
+        "name": "date_created",
+        "type": "date"
+      },
+      {
+        "name": "last_updated",
+        "type": "date"
+      },
+      {
+        "name": "version",
+        "type": "number"
+      },
+      {
+        "importance": "primary",
+        "name": "descricao",
+        "type": "text"
+      },
+      {
+        "name": "usuario_created_id",
+        "type": "fk"
+      },
+      {
+        "name": "responsavel",
+        "type": "fk"
+      },
+     {
+        "name": "usuario_updated_id",
+        "type": "fk"
+      }
+    ],
+    "type": "entity"
+  },
+  {
+    "name": "setor",
+    "attributes": [
+      {
+        "name": "id",
+        "type": "pk"
+      },
+      {
+        "name": "date_created",
+        "type": "date"
+      },
+      {
+        "name": "last_updated",
+        "type": "date"
+      },
+      {
+        "name": "version",
+        "type": "number"
+      },
+      {
+        "importance": "primary",
+        "name": "descricao",
+        "type": "text"
+      },
+     {
+        "name": "restaurante_id",
+        "type": "fk"
+      }
+    ],
+    "type": "entity"
+  },
+  {
+    "name": "tab_estruturada",
+    "attributes": [
+      {
+        "name": "id_tabela",
+        "type": "pk"
+      },
+      {
+        "name": "dt_alteracao",
+        "type": "date"
+      },
+      {
+        "name": "hr_alteracao",
+        "type": "date"
+      },
+      {
+        "name": "cod_tabela",
+        "type": "number"
+      },
+      {
+        "name": "concorrencia",
+        "type": "number"
+      },
+      {
+        "importance": "primary",
+        "name": "descricao",
+        "type": "text"
+      },
+      {
+        "name": "icone",
+        "type": "number"
+      },
+      {
+        "name": "item_tabela",
+        "type": "number"
+      },
+      {
+        "name": "id_tabela_sup",
+        "type": "number"
+      },
+      {
+        "name": "cod_operador",
+        "type": "number"
+      },
+      {
+        "name": "ind_ativo",
+        "type": "text"
+      },{
+        "name": "ind_default",
+        "type": "text"
+      },{
+        "name": "ind_exclusão",
+        "type": "text"
+      },{
+        "name": "sigla",
+        "type": "text"
+      }
+    ],
+    "type": "entity"
+  },
+  {
+    "name": "tipo_alimentacao",
+    "attributes": [
+      {
+        "name": "id",
+        "type": "pk"
+      },
+      {
+        "name": "date_created",
+        "type": "date"
+      },
+      {
+        "name": "last_updated",
+        "type": "date"
+      },
+      {
+        "name": "version",
+        "type": "number"
+      },
+      {
+        "name": "fim",
+        "type": "date"
+      },
+      {
+        "name": "inicio",
+        "type": "date"
+      },
+      {
+        "name": "quantidade_maxima",
+        "type": "number"
+      },
+      {
+        "name": "valor_aluno_double",
+        "type": "number"
+      },
+      {
+        "name": "valor_fornecedor_double",
+        "type": "number"
+      },
+      {
+        "importance": "primary",
+        "name": "descricao",
+        "type": "text"
+      },
+      {
+        "name": "valor_aluno",
+        "type": "text"
+      },
+      {
+        "name": "valor_fornecedor",
+        "type": "text"
+      },
+     {
+        "name": "restaurante_id",
+        "type": "fk"
+      },
+      {
+        "name": "usuario_created_id",
+        "type": "fk"
+      },
+     {
+        "name": "usuario_updated_id",
+        "type": "fk"
+      }
+    ],
+    "type": "entity"
+  },
+  {
+    "name": "usuario",
+    "attributes": [
+      {
+        "name": "id",
+        "type": "pk"
+      },
+      {
+        "name": "date_created",
+        "type": "date"
+      },
+      {
+        "name": "last_updated",
+        "type": "date"
+      },
+      {
+        "name": "version",
+        "type": "number"
+      },
+      {
+        "name": "login",
+        "type": "text"
+      },
+
+      {
+        "name": "senha",
+        "type": "text"
+      },
+      {
+        "importance": "primary",
+        "name": "nome",
+        "type": "text"
+      },
+       {
+        "name": "grupo_id",
+        "type": "fk"
+      }
+    ],
+    "type": "entity"
+  }
+]

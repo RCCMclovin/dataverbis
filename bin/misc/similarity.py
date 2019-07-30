@@ -179,7 +179,7 @@ def word_embedding_compute(word1, word2):
             
 def pq_sim(a,b):
     Q = 2
-    if len(a) == 0 or len(b) == 0:
+    if not a or len(a) == 0 or not b or len(b) == 0:
         return 0
 
     a = a.lower()
