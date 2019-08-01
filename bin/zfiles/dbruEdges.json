@@ -6,34 +6,10 @@
     "primaryRelation": "menu"
   },
   {
-    "foreignAttribute": "usuario_created_id",
-    "primaryAttribute": "id",
-    "foreignRelation": "aplicacao",
-    "primaryRelation": "usuario"
-  },
-  {
-    "foreignAttribute": "usuario_updated_id",
-    "primaryAttribute": "id",
-    "foreignRelation": "aplicacao",
-    "primaryRelation": "usuario"
-  },
-  {
     "foreignAttribute": "aluno_id",
     "primaryAttribute": "id",
     "foreignRelation": "curso_aluno",
     "primaryRelation": "aluno"
-  },
-  {
-    "foreignAttribute": "usuario_created_id",
-    "primaryAttribute": "id",
-    "foreignRelation": "grupo",
-    "primaryRelation": "usuario"
-  },
-  {
-    "foreignAttribute": "usuario_updated_id",
-    "primaryAttribute": "id",
-    "foreignRelation": "grupo",
-    "primaryRelation": "usuario"
   },
   {
     "foreignAttribute": "aplicacao_id",
@@ -46,30 +22,6 @@
     "primaryAttribute": "id",
     "foreignRelation": "grupo_aplicacao",
     "primaryRelation": "grupo"
-  },
-  {
-    "foreignAttribute": "usuario_created_id",
-    "primaryAttribute": "id",
-    "foreignRelation": "menu",
-    "primaryRelation": "usuario"
-  },
-  {
-    "foreignAttribute": "usuario_updated_id",
-    "primaryAttribute": "id",
-    "foreignRelation": "menu",
-    "primaryRelation": "usuario"
-  },
-  {
-    "foreignAttribute": "usuario_created_id",
-    "primaryAttribute": "id",
-    "foreignRelation": "movimentacao",
-    "primaryRelation": "usuario"
-  },
-  {
-    "foreignAttribute": "usuario_updated_id",
-    "primaryAttribute": "id",
-    "foreignRelation": "movimentacao",
-    "primaryRelation": "usuario"
   },
   {
     "foreignAttribute": "aluno_id",
@@ -94,35 +46,12 @@
     "primaryAttribute": "id",
     "foreignRelation": "movimentacao",
     "primaryRelation": "setor"
-  },{
-    "foreignAttribute": "usuario_created_id",
-    "primaryAttribute": "id",
-    "foreignRelation": "restaurante",
-    "primaryRelation": "usuario"
-  },
-  {
-    "foreignAttribute": "usuario_updated_id",
-    "primaryAttribute": "id",
-    "foreignRelation": "restaurante",
-    "primaryRelation": "usuario"
   },
   {
     "foreignAttribute": "restaurante_id",
     "primaryAttribute": "id",
     "foreignRelation": "setor",
     "primaryRelation": "restaurante"
-  },
-  {
-    "foreignAttribute": "usuario_created_id",
-    "primaryAttribute": "id",
-    "foreignRelation": "tipo_alimentacao",
-    "primaryRelation": "usuario"
-  },
-  {
-    "foreignAttribute": "usuario_updated_id",
-    "primaryAttribute": "id",
-    "foreignRelation": "tipo_alimentacao",
-    "primaryRelation": "usuario"
   },
   {
     "foreignAttribute": "restaurante_id",

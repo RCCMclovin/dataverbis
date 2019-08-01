@@ -12,16 +12,8 @@
         "type": "text"
       },
       {
-        "name": "version",
-        "type": "number"
-      },
-      {
         "name": "rg",
         "type": "text"
-      },
-      {
-        "name": "last_updated",
-        "type": "date"
       },
       {
         "name": "dt_nascimento",
@@ -30,18 +22,6 @@
       {
         "name": "foto",
         "type": "binary"
-      },
-      {
-        "name": "digital_dir",
-        "type": "binary"
-      },
-      {
-        "name": "digital_esq",
-        "type": "binary"
-      },
-      {
-        "name": "date_created",
-        "type": "date"
       },
       {
         "name": "cpf",
@@ -59,18 +39,6 @@
         "type": "pk"
       },
       {
-        "name": "version",
-        "type": "number"
-      },
-      {
-        "name": "date_created",
-        "type": "date"
-      },
-      {
-        "name": "last_updated",
-        "type": "date"
-      },
-      {
         "importance": "primary",
         "name": "controle",
         "type": "text"
@@ -80,28 +48,16 @@
         "type": "text"
       },
       {
-        "name": "dt_fim",
+        "name": "dtfim",
         "type": "date"
       },
       {
-        "name": "dt_inicio",
+        "name": "dtinicio",
         "type": "date"
       },
       {
-        "name": "ativo",
-        "type": "number"
-      },
-      {
-        "name": "usuario_created_id",
+        "name": "menu_id",
         "type": "fk"
-      },
-    {
-        "name": "usuario_updated_id",
-        "type": "fk"
-      },
-      {
-        "name": "visivel",
-        "type": "number"
       }
     ],
     "type": "entity"
@@ -114,18 +70,6 @@
         "type": "pk"
       },
       {
-        "name": "date_created",
-        "type": "date"
-      },
-      {
-        "name": "last_updated",
-        "type": "date"
-      },
-      {
-        "name": "version",
-        "type": "number"
-      },
-      {
         "name": "ano_ingresso",
         "type": "number"
       },
@@ -134,20 +78,16 @@
         "type": "fk"
       },
       {
-        "importance": "primary",
         "name": "matr_aluno",
         "type": "text"
       },
       {
+        "importance": "primary",
         "name": "nome_curso",
         "type": "text"
       },
       {
         "name": "cod_curso",
-        "type": "text"
-      },
-      {
-        "name": "forma_evasao",
         "type": "text"
       }
     ],
@@ -161,20 +101,8 @@
         "type": "pk"
       },
       {
-        "name": "version",
-        "type": "number"
-      },
-      {
         "name": "aplicacao_id",
         "type": "fk"
-      },
-      {
-        "name": "date_created",
-        "type": "date"
-      },
-      {
-        "name": "last_updated",
-        "type": "date"
       },
       {
         "name": "grupo_id",
@@ -191,20 +119,8 @@
         "type": "pk"
       },
       {
-        "name": "version",
-        "type": "number"
-      },
-      {
         "name": "aplicacao_id",
         "type": "fk"
-      },
-      {
-        "name": "date_created",
-        "type": "date"
-      },
-      {
-        "name": "last_updated",
-        "type": "date"
       },
       {
         "name": "usuario_id",
@@ -221,29 +137,9 @@
         "type": "pk"
       },
       {
-        "name": "date_created",
-        "type": "date"
-      },
-      {
-        "name": "last_updated",
-        "type": "date"
-      },
-      {
-        "name": "version",
-        "type": "number"
-      },
-      {
         "importance": "primary",
         "name": "descricao",
         "type": "text"
-      },
-      {
-        "name": "usuario_created_id",
-        "type": "fk"
-      },
-     {
-        "name": "usuario_updated_id",
-        "type": "fk"
       }
     ],
     "type": "entity"
@@ -256,29 +152,9 @@
         "type": "pk"
       },
       {
-        "name": "date_created",
-        "type": "date"
-      },
-      {
-        "name": "last_updated",
-        "type": "date"
-      },
-      {
-        "name": "version",
-        "type": "number"
-      },
-      {
         "importance": "primary",
         "name": "descricao",
         "type": "text"
-      },
-      {
-        "name": "usuario_created_id",
-        "type": "fk"
-      },
-     {
-        "name": "usuario_updated_id",
-        "type": "fk"
       }
     ],
     "type": "entity"
@@ -291,24 +167,8 @@
         "type": "pk"
       },
       {
-        "name": "date_created",
-        "type": "date"
-      },
-      {
-        "name": "last_updated",
-        "type": "date"
-      },
-      {
-        "name": "version",
-        "type": "number"
-      },
-      {
         "importance": "primary",
         "name": "num_venda",
-        "type": "number"
-      },
-      {
-        "name": "estorno",
         "type": "number"
       },
       {
@@ -321,10 +181,6 @@
       },
       {
         "name": "saldo",
-        "type": "number"
-      },
-      {
-        "name": "sincronizado",
         "type": "number"
       },
       {
@@ -352,15 +208,7 @@
         "type": "text"
       },
       {
-        "name": "usuario_created_id",
-        "type": "fk"
-      },
-      {
         "name": "setor_id",
-        "type": "fk"
-      },
-     {
-        "name": "usuario_updated_id",
         "type": "fk"
       }
     ],
@@ -374,32 +222,12 @@
         "type": "pk"
       },
       {
-        "name": "date_created",
-        "type": "date"
-      },
-      {
-        "name": "last_updated",
-        "type": "date"
-      },
-      {
-        "name": "version",
-        "type": "number"
-      },
-      {
         "importance": "primary",
         "name": "descricao",
         "type": "text"
       },
       {
-        "name": "usuario_created_id",
-        "type": "fk"
-      },
-      {
         "name": "responsavel",
-        "type": "fk"
-      },
-     {
-        "name": "usuario_updated_id",
         "type": "fk"
       }
     ],
@@ -411,18 +239,6 @@
       {
         "name": "id",
         "type": "pk"
-      },
-      {
-        "name": "date_created",
-        "type": "date"
-      },
-      {
-        "name": "last_updated",
-        "type": "date"
-      },
-      {
-        "name": "version",
-        "type": "number"
       },
       {
         "importance": "primary",
@@ -444,19 +260,7 @@
         "type": "pk"
       },
       {
-        "name": "dt_alteracao",
-        "type": "date"
-      },
-      {
-        "name": "hr_alteracao",
-        "type": "date"
-      },
-      {
         "name": "cod_tabela",
-        "type": "number"
-      },
-      {
-        "name": "concorrencia",
         "type": "number"
       },
       {
@@ -465,33 +269,8 @@
         "type": "text"
       },
       {
-        "name": "icone",
-        "type": "number"
-      },
-      {
         "name": "item_tabela",
         "type": "number"
-      },
-      {
-        "name": "id_tabela_sup",
-        "type": "number"
-      },
-      {
-        "name": "cod_operador",
-        "type": "number"
-      },
-      {
-        "name": "ind_ativo",
-        "type": "text"
-      },{
-        "name": "ind_default",
-        "type": "text"
-      },{
-        "name": "ind_exclusão",
-        "type": "text"
-      },{
-        "name": "sigla",
-        "type": "text"
       }
     ],
     "type": "entity"
@@ -504,35 +283,7 @@
         "type": "pk"
       },
       {
-        "name": "date_created",
-        "type": "date"
-      },
-      {
-        "name": "last_updated",
-        "type": "date"
-      },
-      {
-        "name": "version",
-        "type": "number"
-      },
-      {
-        "name": "fim",
-        "type": "date"
-      },
-      {
-        "name": "inicio",
-        "type": "date"
-      },
-      {
         "name": "quantidade_maxima",
-        "type": "number"
-      },
-      {
-        "name": "valor_aluno_double",
-        "type": "number"
-      },
-      {
-        "name": "valor_fornecedor_double",
         "type": "number"
       },
       {
@@ -551,14 +302,6 @@
      {
         "name": "restaurante_id",
         "type": "fk"
-      },
-      {
-        "name": "usuario_created_id",
-        "type": "fk"
-      },
-     {
-        "name": "usuario_updated_id",
-        "type": "fk"
       }
     ],
     "type": "entity"
@@ -570,23 +313,6 @@
         "name": "id",
         "type": "pk"
       },
-      {
-        "name": "date_created",
-        "type": "date"
-      },
-      {
-        "name": "last_updated",
-        "type": "date"
-      },
-      {
-        "name": "version",
-        "type": "number"
-      },
-      {
-        "name": "login",
-        "type": "text"
-      },
-
       {
         "name": "senha",
         "type": "text"
