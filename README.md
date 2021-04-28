@@ -2,7 +2,7 @@
 
 ## Instalação
 
-Primeiramente verifique se sua máquina possui npm, python 2.7 e as bibliotecas gensim, setuptools, glob e nltk.
+Primeiramente verifique se sua máquina possui npm, python 3 e as bibliotecas gensim, setuptools, glob e nltk.
 
 Após clonar o repositório, faça o download do banco de dados em:
 https://s3.amazonaws.com/umdb-users/cjbaik/mas.sql
@@ -21,7 +21,7 @@ obs.: Dentro do diretório bin deve haver o diretório jars.
 Execute o programa config.py para fazer as configurações iniciais.
 
 obs.: config.py ira requisitar informações para acessar o banco de dados que acabamos de baixar.
-O config.py deverá ser executado em python 2.
+O config.py deverá ser executado em python 3.
 Digite as informações entre aspas simples ou duplas senão ocorrerá um erro.
 
 

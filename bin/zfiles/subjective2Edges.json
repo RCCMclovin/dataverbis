@@ -1,0 +1,8 @@
+[
+    {
+        "foreignAttribute": "product_id",
+        "primaryAttribute": "id",
+        "foreignRelation": "attributes",
+        "primaryRelation": "products"
+    }
+]

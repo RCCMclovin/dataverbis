@@ -1,0 +1,30 @@
+return me which products are perfect notebooks
+return me which products are deal notebooks
+return me which products are great dvds
+return me which products are plenty storage cells
+return me which products are easy use notebooks
+return me which products are great computers
+return me which products are cells with great price
+return me which products are small routers
+return me which products are fun computers
+return me which products are great battery cells
+return me which products are easy setup dvds
+return me which products are fast cells
+return me which products are good cameras
+return me which products are "low light" cameras
+return me which products are dvds with clear video
+return me which products are nice screen cells
+return me which products are cells with "12 megapixels" camera
+return me which products are cells with super amoled display
+return me which products are apple cells
+return me which products are cells with excelent price 
+return me which products are sony cameras
+return me which products are routers withgood price
+return me which products are perfect phone
+return me which products named "moto z"
+return me which products are cells with outstanding camera
+return me which products are fast motorola
+return me which products are routers with great range
+return me which products are cameras with cool "zoom lens"
+return me which products are cameras with "4k video"
+return me which products are "easy to carry" notebooks

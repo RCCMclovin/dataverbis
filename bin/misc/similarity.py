@@ -2,7 +2,7 @@ from math import sqrt
 from nltk.corpus import wordnet
 from nltk.stem import WordNetLemmatizer
 from nltk import pos_tag, word_tokenize
-from gensim.models import KeyedVectors
+#from gensim.models import KeyedVectors
 global lemmatizer
 
 lemmatizer = WordNetLemmatizer()
@@ -157,7 +157,7 @@ def load_model ():
     model = KeyedVectors.load_word2vec_format('../data/GoogleNews-vectors-negative300.bin',
          binary=True)
     
-
+"""
 def word_embedding_compute(word1, word2):
     global model
     sim = 0
@@ -175,7 +175,7 @@ def word_embedding_compute(word1, word2):
 
     #print (sim)
     return sim
-
+"""
             
 def pq_sim(a,b):
     Q = 2

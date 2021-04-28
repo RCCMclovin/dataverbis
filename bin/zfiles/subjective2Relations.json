@@ -1,0 +1,61 @@
+[
+    {
+        "name": "products",
+        "attributes":[
+            {
+                "name": "id",
+                "type": "pk"
+              },
+              {
+                "importance": "primary",
+                "name": "brand",
+                "type": "text"
+              },
+              {
+                "importance": "primary",
+                "name": "category",
+                "type": "text"
+              },
+              {
+                "importance": "primary",
+                "name": "name",
+                "type": "text"
+              },
+              {
+                "name": "model_number",
+                "type": "text"
+              }
+        ],
+        "type": "entity"
+    },
+    {
+        "name": "attributes",
+        "attributes":[
+            {
+                "name": "id_att",
+                "type": "pk"
+              },
+              {
+                "importance": "primary",
+                "name": "att_name",
+                "type": "text"
+              },
+              {
+                "name": "product_id",
+                "type": "fk"
+              },
+              {
+                "importance": "primary",
+                "name": "sentiments",
+                "type": "text"
+              },
+              {
+                "importance": "primary",
+                "name": "value",
+                "type": "text"
+              }
+
+        ],
+        "type": "entity"
+    }
+]

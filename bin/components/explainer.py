@@ -157,5 +157,5 @@ def explain(query):
         nl = explain_tree(i)
         query.nl_sentence.append(nl)
     for i in query.nl_sentence:
-        print str(i)
+        print(str(i))
 
