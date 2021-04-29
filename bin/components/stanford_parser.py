@@ -5,14 +5,12 @@ from copy import deepcopy
 from data_structure.parse_tree import ParseTree
 #from nltk.parse.stanford import StanfordNeuralDependencyParser
 
-# Configure path 
-#os.environ['CLASSPATH'] = "/home/rafael/jars/stanford-postagger-2018-02-27/:/home/rafael/jars/stanford-parser-full-2018-02-27/:/home/rafael/jars/stanford-ner-2018-02-27/"
 
 all_path = '/'.join(os.getcwd().split('/')[:] + ['bin','jars', 'new_jars'])
 #print(all_path)
 
 os.environ['STANFORD_PARSER'] = all_path
-os.environ['STANFORD_MODELS'] = all_path #"/home/rafael/jars/stanford-postagger-2018-02-27/models:/home/rafael/jars/stanford-ner-2018-02-27/classifiers"
+os.environ['STANFORD_MODELS'] = all_path
 
 ID_IDX = 0
 WORD_IDX = 1
@@ -72,7 +70,6 @@ class StanfordParser:
             
             word = query.sentence.output_words[idx]
             idx_dep = self.map_words_index[word]
-
             dependency = dep_dict[word][idx_dep]
             relation = dependency[1]
             tag = dependency[2][1]

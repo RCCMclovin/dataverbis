@@ -9,7 +9,12 @@ class SchemaGraph:
     REL_EDGE = 0.995
     ATT_EDGE = 0.995
    
-    default_path =  '../'+'/'.join(os.getcwd().split('/')[:-1] + ['zfiles', '{0}{1}.json'])
+    default_path = '../'+'/'.join(os.getcwd().split('/')[:-1] + ['zfiles', '{0}{1}.json'])
+    try:
+        open(default_path.format(name, "Relations"), 'r')
+    except:
+        default_path = '/'.join(os.getcwd().split('/')[:-1] + ['bin','zfiles', '{0}{1}.json'])
+
     def __init__(self, name):
         self.schema_elements = []
         self.weight = None
