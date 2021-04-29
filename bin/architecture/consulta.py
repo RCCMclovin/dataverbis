@@ -16,9 +16,9 @@ from misc.process_command import CommandProcessor
 
 import glob
 import pickle
-
-token_path = '/'.join(os.getcwd().split('/')[:-1] + ['zfiles', 'tokens.xml'])
-config_path = '/'.join(os.getcwd().split('/')[:-1] + ['config', 'config.json'])
+os.environ['CLASSPATH'] = "D:/nalir-py/jars/new_jars/"
+token_path = "../"+'/'.join(os.getcwd().split('/')[:-1] + ['zfiles', 'tokens.xml'])
+config_path = "../"+'/'.join(os.getcwd().split('/')[:-1] + ['config', 'config.json'])
 
 col = glob.glob("../zfiles/dict_*")
 #load_model()

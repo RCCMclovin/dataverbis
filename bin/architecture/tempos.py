@@ -17,9 +17,9 @@ from misc.process_command import CommandProcessor
 
 import glob
 import pickle
-
-token_path = '/'.join(os.getcwd().split('/')[:-1] + ['zfiles', 'tokens.xml'])
-config_path = '/'.join(os.getcwd().split('/')[:-1] + ['config', 'config.json'])
+os.environ['CLASSPATH'] = "D:/nalir-py/jars/new_jars/"
+token_path = "../"+'/'.join(os.getcwd().split('/')[:-1] + ['zfiles', 'tokens.xml'])
+config_path = '../'+'/'.join(os.getcwd().split('/')[:-1] + ['config', 'config.json'])
 
 col = glob.glob("../zfiles/dict_*")
 #load_model()
@@ -76,13 +76,13 @@ def run(query):
 def consulta(query="return me the authors"):
     q = Query(query,rdbms.schema_graph)
     return run(q)
-'''
+#'''
 query = Query("return me the total citations of papers in the VLDB conference in 2005. ", rdbms.schema_graph)
 r = run(query)
 print ('\n'+ r+ '\n\n')
 
 #'''
-#'''
+'''
 arq = open('../queries2.txt','r')
 s = int(input("start:"))
 e = int(input("end:"))

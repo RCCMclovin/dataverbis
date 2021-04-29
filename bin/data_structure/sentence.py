@@ -4,7 +4,7 @@ class Sentence (object):
         self.word_list = []
         self.output_words = []
         self.word_dict = {}
-
+        
         self.word_split(query)
         for word in self.word_list:
             word = word.replace(' ', '_')

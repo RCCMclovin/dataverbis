@@ -140,19 +140,19 @@ class TreeNode (object):
             elif len(self.children) == 0:
                 #self.have_children += [False]
                 self.have_children += [False, False, False]
-            	# self.have_children.append(False) 
-            	# self.have_children.append(False) 
-            	# self.have_children.append(False) 
+                # self.have_children.append(False)
+                # self.have_children.append(False)
+                # self.have_children.append(False) 
             
             elif len(self.children) == 1:
-            	child = self.children[0] 
-            	if child.token_type == "VTNUM" and \
+                child = self.children[0] 
+                if child.token_type == "VTNUM" and \
                 child.mapped_element is not None:
                     if  self.parent.token_type != "NT":
                         self.up_valid = False 
                         #print 'Q --> Invalide token ',self.label,' child: ', child.label 
-            
-            	elif child.token_type == "VTNUM" \
+                
+                elif child.token_type == "VTNUM" \
                 or child.token_type == "NT" \
                 or child.token_type == "VTTEXT" \
                 or child.token_type == "FT":
@@ -163,8 +163,8 @@ class TreeNode (object):
 
                     self.have_children += [False]  
                     # self.have_children.append(False) 
-            
-            	else:
+                
+                else:
                     if  self.parent.token_type != "ROOT" and  \
                     self.parent.token_type != "NT":
                         #print 'G --> Father must be ROOT/NT', child.label, 'by', self.label
@@ -175,9 +175,9 @@ class TreeNode (object):
                     # self.have_children.append(False) 
 
             elif len(self.children) == 2:
-            	left_right = 0 
-            	right = 0 
-            	
+                left_right = 0 
+                right = 0 
+
                 for i in range(len(self.children)):
                     child = self.children[i]
                     if child.token_type == "VTNUM" or \
@@ -190,7 +190,7 @@ class TreeNode (object):
                     else:
                         #print "H --> Must be father of max/min/vttext/nt/ft: ", child.label, 'by', self.label
                         child.up_valid = False 
-            	
+                        
                 if left_right+right == 0:
                     if  self.parent.token_type != "ROOT" and \
                     self.parent.token_type != "NT":
@@ -199,14 +199,15 @@ class TreeNode (object):
                     self.have_children += [False, False, False]
                     # self.have_children.append(False) 
                     # self.have_children.append(False) 
-                    # self.have_children.append(False) 
-
-            	elif left_right+right == 1:
+                    # self.have_children.append(False)
+                
+                elif left_right+right == 1:
                     if  self.parent.token_type != "ROOT":
                         self.up_valid = False
                         #print 'J --> Father must be ROOT '
                     self.have_children += [False] 
-            	else:
+                
+                else:
                     if right == 2:
                         self.have_children += [False] 
 

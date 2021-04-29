@@ -18,8 +18,9 @@ from misc.process_command import CommandProcessor
 import glob
 import pickle
 #from __future__ import print
-token_path = '/'.join(os.getcwd().split('/')[:-1] + ['zfiles', 'tokens.xml'])
-config_path = '/'.join(os.getcwd().split('/')[:-1] + ['config', 'config.json'])
+os.environ['CLASSPATH'] = "D:/nalir-py/jars/new_jars/"
+token_path = '../'+'/'.join(os.getcwd().split('/')[:-1] + ['zfiles', 'tokens.xml'])
+config_path = '../'+'/'.join(os.getcwd().split('/')[:-1] + ['config', 'config.json'])
 
 config_stream = open(config_path, 'r')
 config_obj = json.load(config_stream)

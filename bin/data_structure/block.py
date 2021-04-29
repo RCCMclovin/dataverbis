@@ -80,29 +80,29 @@ class Block(object):
 
         elif self.block_root.token_type == "FT":
             if len(self.block_root.children) == 1 and self.block_root.children[0].token_type == "NT":
-            	sql_element = SQLElement(self, self.block_root.children[0]) 
-            	self.select_elements.append(sql_element) 
+                sql_element = SQLElement(self, self.block_root.children[0]) 
+                self.select_elements.append(sql_element) 
 
             elif len(self.block_root.children) == 1 and self.block_root.children[0].token_type == "FT":
-            	if len(self.block_root.children[0].children) == 1 and\
+                if len(self.block_root.children[0].children) == 1 and\
                  self.block_root.children[0].children[0].token_type == "NT":
                     sql_element = SQLElement(self.inner_blocks[0], self.block_root.children[0].children[0]) 
                     self.select_elements.append(sql_element) 
 
         for i in range(len(self.inner_blocks)):
             if self.block_root != self.inner_blocks[i].block_root.parent:
-            	self.select_elements.append(self.inner_blocks[i].select_elements[0]) 
+                self.select_elements.append(self.inner_blocks[i].select_elements[0]) 
 
         if self.outer_block is not None and self.outer_block == main_block:
             related_inner_node = self.find_related_node_from_self(main_block) 
             if related_inner_node is not None:
-            	sql_element = SQLElement(self, related_inner_node) 
-            	self.select_elements.append(sql_element) 
+                sql_element = SQLElement(self, related_inner_node)
+                self.select_elements.append(sql_element) 
 
         for i in range(len(self.all_nodes)):
             if self.all_nodes[i].QT == "each":
-            	sql_element = SQLElement(self, self.all_nodes[i]) 
-            	self.select_elements.append(sql_element) 
+                sql_element = SQLElement(self, self.all_nodes[i]) 
+                self.select_elements.append(sql_element) 
 
         if len(query_tree.root.children) > 1 and len(query_tree.root.children[1].children) == 2 and\
          query_tree.root.children[1].children[1].function == "max":
@@ -115,17 +115,17 @@ class Block(object):
             left = False 
             right = False 
             for j in range(len(self.from_elements)):
-            	if self.from_elements[j].element_id == self.edges[i].left.relation.element_id:
+                if self.from_elements[j].element_id == self.edges[i].left.relation.element_id:
                     left = True 
                     break 
 
-            for j in range(len(self.from_elements)):	
-            	if self.from_elements[j].element_id == self.edges[i].right.relation.element_id:
+            for j in range(len(self.from_elements)):
+                if self.from_elements[j].element_id == self.edges[i].right.relation.element_id:
                     right = True 
                     break 
 
             if not left:
-            	self.from_elements.append(self.edges[i].left.relation) 
+                self.from_elements.append(self.edges[i].left.relation) 
 
             if not right:
                 self.from_elements.append(self.edges[i].right.relation)
@@ -136,17 +136,17 @@ class Block(object):
         # WHERE
         if self == main_block and len(query_tree.root.children) > 1 and len(self.inner_blocks) > 0:
             for i in range(1,len(query_tree.root.children)):
-            	complex_condition = query_tree.root.children[i]
+                complex_condition = query_tree.root.children[i]
                 right = complex_condition.children[1]
-            	condition = "" 
-            	condition += self.inner_blocks[0].select_elements[0].to_string(self, "") 
-            	condition += " " + complex_condition.function + " " 
-            	if len(self.inner_blocks) > 1:
+                condition = "" 
+                condition += self.inner_blocks[0].select_elements[0].to_string(self, "")
+                condition += " " + complex_condition.function + " "
+                if len(self.inner_blocks) > 1:
                     condition += self.inner_blocks[1].select_elements[0].to_string(self, "")
-
-            	else:       
-                    condition += right.label 
-            	self.conditions.append(condition) 
+                
+                else:       
+                    condition += right.label
+                self.conditions.append(condition) 
 
         for i in range(len(self.all_nodes)):
             cur_node = self.all_nodes[i] 
@@ -204,15 +204,15 @@ class Block(object):
         # GROUP BY
         if self.outer_block is not None and self.outer_block == main_block:
             for i in range(len(self.all_nodes)):
-            	for j in range(len(self.outer_block.all_nodes)):
+                for j in range(len(self.outer_block.all_nodes)):
                     if self.all_nodes[i].node_id == self.outer_block.all_nodes[j].node_id:
                         element = SQLElement(self, self.all_nodes[i]) 
                         self.group_elements.append(element) 
 
         for i in range(len(self.all_nodes)):
             if self.all_nodes[i].QT == "each":
-            	sql_element = SQLElement(self, self.all_nodes[i]) 
-            	self.group_elements.append(sql_element) 
+                sql_element = SQLElement(self, self.all_nodes[i])
+                self.group_elements.append(sql_element) 
         self.sql_gen()
 
     def sql_gen(self):
@@ -248,7 +248,7 @@ class Block(object):
                 self.sql += " as " + self.block_root.function 
                 
         if self.outer_block == None:
-            self.sql += "\n" 
+            self.sql += '\n' 
 
         else:
             self.sql += " " 
@@ -258,7 +258,7 @@ class Block(object):
             if i != 0:
                 self.sql += ", " 
                 if self.from_elements[i-1].__class__ == self.__class__:
-                    self.sql += "\n" 
+                    self.sql +=  '\n' 
 
             if self.from_elements[i].__class__ == self.__class__:
                 self.sql += "(" 
@@ -271,7 +271,7 @@ class Block(object):
 
         if len(self.conditions) > 0:
             if self.outer_block == None:
-                self.sql += "\n" 
+                self.sql +=  '\n'  
 
             else:
                 self.sql += " " 
@@ -284,8 +284,7 @@ class Block(object):
 
         if len(self.group_elements) > 0:
             if self.outer_block is None:
-                self.sql += "\n" 
-
+                self.sql += '\n' 
             else:
                 self.sql += " "
 
@@ -324,5 +323,5 @@ class Block(object):
         for i in self.inner_blocks:
             result += "block_" + str(i.block_id) + " "
 
-        result +=  "\n" + self.sql + "\n"
+        result += '\n'+ self.sql +'\n' 
         return result

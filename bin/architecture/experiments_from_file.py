@@ -17,7 +17,7 @@ from misc.process_command import CommandProcessor
 
 import glob
 import pickle
-
+t=0
 os.environ['CLASSPATH'] = "D:/nalir-py/jars/new_jars/"
 
 token_path = '../'+'/'.join(os.getcwd().split('/')[:-1] + ['zfiles', 'tokens.xml'])
@@ -80,16 +80,16 @@ def run(q):
 def consulta(query="return me the authors"):
     q = Query(query,rdbms.schema_graph)
     return run(q)
-'''
+#'''
 
-query = Query(input("consulta: ").encode('utf8'), rdbms.schema_graph)
-#t = time.time()
+query =input("consulta: ")
+t = time.time()
 r = run(query)
-#t = time.time()-t
-print '\n'+ r+ '\n'#+'tempo: '+str(t)+'\n'
+t = time.time()-t
+print('\n'+ r+ '\n'+'tempo: '+str(t)+'\n')
 
 #'''
-#'''
+'''
 arq = open('../subjective.txt','r')
 exp = arq.readlines()
 arq.close()
